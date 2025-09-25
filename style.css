@@ -5,13 +5,110 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg-dark));color:var(--text);-webkit-font-smoothing:antialiased}
+/* ==================================== */
+/* ORNAMEN BACKGROUND BODY */
+/* ==================================== */
+
+body {
+    /* Pastikan body adalah container relatif */
+    position: relative;
+    overflow-x: hidden; /* Mencegah scroll horizontal dari ornamen */
+}
+
+/* Ornamen 1: Bulat Besar di Kiri Atas */
+body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.45) 0%, transparent 70%); /* Menggunakan accent1 */
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -1; /* Pastikan di bawah konten */
+    animation: glowMove1 15s infinite alternate ease-in-out;
+}
+
+/* Ornamen 2: Elips Kecil di Kanan Bawah */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -15%;
+    right: -10%;
+    width: 450px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(6, 182, 212, 0.4) 0%, transparent 65%); /* Menggunakan accent2 */
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1; /* Pastikan di bawah konten */
+    animation: glowMove2 12s infinite alternate-reverse ease-in-out;
+}
+
+/* Keyframes untuk Animasi Pergerakan Halus */
+@keyframes glowMove1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 50px) scale(1.05); }
+}
+
+@keyframes glowMove2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-80px, -40px) scale(1.1); }
+}
+
+/* Responsif: Mengurangi ukuran ornamen di layar kecil */
+@media(max-width: 900px) {
+    body::before {
+        width: 350px;
+        height: 350px;
+        left: -30%;
+        filter: blur(100px);
+    }
+    body::after {
+        width: 250px;
+        height: 150px;
+        right: -20%;
+        filter: blur(80px);
+    }
+}
 .container{width:92%;max-width:1100px;margin:0 auto}
 .navbar{position:fixed;top:0;left:0;width:100%;padding:0.9rem 0;background:rgba(15,23,42,0.65);backdrop-filter:blur(8px);z-index:100}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
 .logo{font-weight:700;font-size:1.2rem;color:var(--text);text-decoration:none}
 .nav-links{list-style:none;display:flex;gap:1rem}
 .nav-link{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
-.nav-link:hover{color:var(--text);background:rgba(255,255,255,0.03)}
+.nav-link {
+  /* ... kode yang sudah ada ... */
+  position: relative; /* Penting untuk pseudo-element */
+  padding: .4rem .6rem; 
+  /* Hapus padding-bottom agar garis tidak terlalu jauh */
+  padding-bottom: .6rem; 
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Letakkan di bawah teks */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after { /* Asumsikan Anda menambahkan kelas 'active' pada link saat ini */
+  width: 100%;
+  left: 0;
+}
+
+/* Biarkan hover text color */
+.nav-link:hover {
+  color: var(--text);
+  /* Hapus background hover jika Anda mau */
+  /* background: rgba(255,255,255,0.03); */
+}
 .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem}
 
 /* hero */
@@ -25,6 +122,13 @@ body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
 .stats{display:flex;gap:2rem;margin-top:2rem}
 .stats span{font-size:1.4rem;color:var(--accent2);font-weight:700}
+.section-title {
+  /* Ini akan memberikan jarak yang lebih lega antara judul dan konten grid */
+  margin-bottom: 2.5rem; 
+  text-align: center; /* Asumsikan Anda ingin judul berada di tengah */
+  font-size: 2rem;
+  position: relative;
+}
 
 /* about */
 .section{padding:4rem 0}
@@ -68,7 +172,20 @@ body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),
 .timeline-item.left{left:0;text-align:right}
 .timeline-item.right{left:50%}
 .timeline-marker{position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);width:40px;height:40px;background:linear-gradient(135deg,var(--accent1),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;box-shadow:0 0 15px rgba(0,0,0,0.5)}
-.timeline-content{background:rgba(255,255,255,0.05);padding:1.2rem 1.5rem;border-radius:12px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 25px rgba(0,0,0,0.3);transition:.3s}
+.timeline-content{
+  background: rgba(255,255,255,0.08); /* Sedikit lebih terang dari sebelumnya */
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--accent2); /* Border aksen yang lebih tegas */
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2), 0 8px 25px rgba(0,0,0,0.4); /* Glow aksen */
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px); /* Efek melayang saat hover */
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.4), 0 12px 30px rgba(0,0,0,0.5); /* Glow yang lebih kuat */
+}
 
 /* contact */
 .contact-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
@@ -78,6 +195,94 @@ body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),
 .social-links a:nth-child(3){grid-column:1 / -1;justify-self:center}
 .social-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:var(--text);transition:.25s;min-width:140px;justify-content:center}
 .social-btn i{font-size:1.1rem;margin-right:.3rem}
+
+/* CONTACT visual enhancement */
+
+.contact-card{
+  /* Perubahan visual utama */
+  background: rgba(255,255,255,0.06); /* Lebih menonjol */
+  border: 1px solid var(--accent1); /* Border accent */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 10px var(--accent2); /* Efek glow ringan */
+  transition: transform .3s, box-shadow .3s;
+  height: 100%; /* Pastikan semua kartu memiliki tinggi yang sama */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 15px var(--accent1); /* Hover effect */
+}
+
+.contact-icon{
+  font-size: 2.2rem; /* Ikon lebih besar */
+  color: var(--accent2); /* Warna accent */
+  margin-bottom: 0.8rem;
+}
+
+.contact-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.contact-card a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: var(--accent2);
+}
+
+/* New Social Links Style */
+.social-links-new {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icon-btn {
+  font-size: 1.8rem; /* Ikon sosial lebih besar */
+  color: var(--muted);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.social-icon-btn.linkedin:hover {
+  color: #0A66C2;
+}
+.social-icon-btn.instagram:hover {
+  color: #E1306C;
+}
+.social-icon-btn.tiktok:hover {
+  color: #69C9D0;
+}
+
+/* Hapus style social-links lama yang tidak terpakai */
+.social-links { display: none; } /* Nonaktifkan gaya lama */
+.social-btn { display: none; } /* Nonaktifkan gaya lama */
+/* Hapus grid-template columns untuk sosial lama */
+/* .social-links a:nth-child(3){grid-column:1 / -1;justify-self:center} <- Hapus ini jika di tempatkan di sini */
+
+/* Sesuaikan tampilan untuk kartu sosial yang baru */
+.contact-card.social-card {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Responsif: Pastikan kartu sosial baru tidak memiliki margin top berlebih di mobile */
+@media(max-width:900px){
+  .contact-card.social-card {
+    margin-top: 1rem !important; /* Memastikan margin tidak berlebihan di mobile */
+  }
+}
 
 /* contact cta */
 .contact-cta{display:flex;justify-content:center;gap:1.2rem;margin-top:1.5rem;flex-wrap:wrap}
@@ -115,4 +320,43 @@ body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),
   color: #fff;
   background-image: linear-gradient(90deg, var(--accent1), var(--accent2)), 
                     linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+
+.logo {
+  /* ... kode yang sudah ada ... */
+  display: inline-block;
+  padding: 0.2rem 0;
+  /* Efek glow/neon */
+  text-shadow: 0 0 5px var(--accent2), 0 0 10px var(--accent1);
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  /* Sedikit lebih terang saat hover */
+  color: #fff;
+  text-shadow: 0 0 8px var(--accent2), 0 0 15px var(--accent1);
+  transform: translateY(-1px); /* Gerakan kecil saat hover */
+}
+/* Di bagian Navbar */
+.nav-links{list-style:none;display:flex;gap:1rem; align-items: center;} /* Tambahkan align-items: center */
+
+.nav-cta-item {
+    /* Hanya tampilkan tombol di desktop */
+    margin-left: 0.5rem; /* Beri sedikit jarak */
+}
+
+/* Pastikan tombol di navbar lebih kecil */
+.nav-cta-btn {
+    padding: .5rem 1rem; /* Ukuran yang pas untuk navbar */
+    font-size: 0.9rem;
+}
+
+/* Responsif: sembunyikan tombol CTA di mobile untuk menggunakan toggle menu */
+@media(max-width:900px){
+    /* ... kode responsif lainnya ... */
+    .nav-cta-item {
+        display: none; /* Sembunyikan tombol CTA di mobile */
+    }
+    
+    /* Perlu juga menyesuaikan bagaimana menu mobile Anda ditampilkan */
 }

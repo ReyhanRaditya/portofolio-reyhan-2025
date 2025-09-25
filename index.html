@@ -4,14 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Reyhan Raditya — Portfolio</title>
-  <link href="assets/logo.png" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="assets/rey.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="logo">Rey<span class="accent">.</span></a>
+      <!-- <img src="assets/rey.png" alt="Logo Rey" style="height: 30px; vertical-align: middle;"> -->
+      <a href="#home" class="logo">
+        <img src="assets/logo.png" alt="Logo Rey" style="height: 30px; vertical-align: middle;">
+        Rey<span class="accent">.</span>
+      </a>
       <nav>
         <ul class="nav-links">
           <li><a href="#home" class="nav-link">Home</a></li>
@@ -19,7 +24,9 @@
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-cta-item">
+            <a href="#contact" class="btn btn-primary btn-sm ripple nav-cta-btn">Contact</a>
+          </li>
         </ul>
         <button class="nav-toggle" id="navToggle">☰</button>
       </nav>
@@ -226,19 +233,17 @@
             <h4>Location</h4>
             <p>JL. Kelapa Dua RT 09/RW 003 NO.12B, CILINCING, CILINCING, JAKARTA UTARA, JAKARTA, 14120.</p>
           </div>
-
-        </div>
-
-        <div class="contact-card reveal-up delay-3" style="margin-top:1.5rem; text-align:center;">
-          <h4>Social</h4>
-          <div class="social-links">
-            <a href="https://instagram.com/ryhnrdit" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
-            <a href="https://tiktok.com/@reydit12" target="_blank" class="social-btn tiktok"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
-            <a href="https://linkedin.com/in/Reyhan Raditya" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+          <div class="contact-card social-card reveal-up delay-3" style="margin-top:0;">
+            <h4>Connect with Me</h4>
+            <div class="social-links-new">
+              <a href="https://linkedin.com/in/Reyhan Raditya" target="_blank" class="social-icon-btn linkedin"><i class="fab fa-linkedin"></i></a>
+              <a href="https://instagram.com/ryhnrdit" target="_blank" class="social-icon-btn instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://tiktok.com/@reydit12" target="_blank" class="social-icon-btn tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
           </div>
         </div>
 
-        <div class="contact-cta reveal-up">
+        <div class="contact-cta reveal-up" style="margin-top: 3rem;">
           <a href="Portofolio_Reyhan%20Raditya.pdf.pdf" class="btn btn-secondary ripple" download>📂 Download Portfolio</a>
           <a href="CV_ReyhanRaditya1.pdf" class="btn btn-secondary ripple" download>📄 Download CV</a>
         </div>
