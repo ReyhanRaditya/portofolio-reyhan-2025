@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project B — Project</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+</head>
+<body>
+  <main>
+    <section class="project-hero">
+      <style>
+        /* Menambah ruang di atas section hero */
+        .project-hero {
+          padding-top: 50px; /* Sesuaikan nilai ini (misalnya 50px) sesuai kebutuhan Anda */
+        }
+      </style>
+      <div class="container">
+        <h1>Project B</h1>
+        <p class="muted">Mobile App • 2023</p>
+      </div>
+    </section>
+
+    <section class="project-gallery section">
+      <div class="container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="https://placehold.co/1600x900" class="glightbox">
+                <img src="d1.png" alt="Project B 1">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://placehold.co/1600x900" class="glightbox" data-title="Project B — Dashboard" data-description="Interactive dashboard with premium animations.">
+                <img src="assets/d2.png" alt="Project B 2">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://placehold.co/1600x900" class="glightbox" data-title="Project B — Mobile" data-description="Optimized mobile layout for seamless experience.">
+                <img src="assets/d3.png" alt="Project B 3">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://placehold.co/1600x900" class="glightbox" data-title="Project B — Mobile" data-description="Optimized mobile layout for seamless experience.">
+                <img src="assets/d4.png" alt="Project B 3">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://placehold.co/1600x900" class="glightbox" data-title="Project B — Mobile" data-description="Optimized mobile layout for seamless experience.">
+                <img src="assets/d5.png" alt="Project B 3">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://placehold.co/1600x900" class="glightbox" data-title="Project B — Mobile" data-description="Optimized mobile layout for seamless experience.">
+                <img src="assets/d6.png" alt="Project B 3">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container">
+        <div class="contact-cta">
+          <a href="index.html#portfolio" class="btn btn-secondary">⬅ Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', { loop:true, pagination:{ el:'.swiper-pagination', clickable:true }, navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev' } });
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
+</body>
+</html>

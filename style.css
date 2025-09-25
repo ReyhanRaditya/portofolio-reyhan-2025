@@ -1,0 +1,118 @@
+
+:root{
+  --bg:#0f172a; --bg-dark:#0f2233; --accent1:#7c3aed; --accent2:#06b6d4;
+  --text:#f1f5f9; --muted:#94a3b8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg-dark));color:var(--text);-webkit-font-smoothing:antialiased}
+.container{width:92%;max-width:1100px;margin:0 auto}
+.navbar{position:fixed;top:0;left:0;width:100%;padding:0.9rem 0;background:rgba(15,23,42,0.65);backdrop-filter:blur(8px);z-index:100}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:1.2rem;color:var(--text);text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:1rem}
+.nav-link{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
+.nav-link:hover{color:var(--text);background:rgba(255,255,255,0.03)}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.4rem}
+
+/* hero */
+.hero{min-height:86vh;display:flex;align-items:center;padding-top:60px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.hero-text h1{font-size:2.5rem}
+.typing{color:var(--muted);margin:1rem 0}
+.cta{margin-top:1rem;display:flex;gap:1rem}
+.btn{padding:.7rem 1.2rem;border-radius:999px;border:none;cursor:pointer;font-weight:600;position:relative;overflow:hidden;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.stats{display:flex;gap:2rem;margin-top:2rem}
+.stats span{font-size:1.4rem;color:var(--accent2);font-weight:700}
+
+/* about */
+.section{padding:4rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.about-img img{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .4s}
+.about-img img:hover{transform:scale(1.03)}
+.about-content p{color:var(--muted);margin-bottom:1rem}
+.about-highlights{list-style:none;margin:1rem 0;padding:0}
+.about-highlights li{margin:.4rem 0;font-weight:500;display:flex;gap:.5rem;align-items:center}
+.about-highlights li::before{content:"✔";color:var(--accent2);font-weight:700;margin-right:8px}
+
+/* skills */
+.dark{background:var(--bg-dark);padding-top:2rem;padding-bottom:2rem}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.skill-card{background:rgba(255,255,255,0.04);padding:1rem 1.2rem;border-radius:12px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.06);transition:.3s;position:relative;overflow:hidden}
+.skill-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 10px 25px rgba(0,0,0,.45)}
+.skill-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.skill-icon{font-size:1.5rem;margin-right:8px}
+.skill-header h4{flex:1;margin:0;font-size:1.05rem}
+.skill-percent{font-weight:700;color:var(--accent2);min-width:48px;text-align:right}
+.progress{height:14px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(270deg,var(--accent1),var(--accent2),var(--accent1));background-size:200% 100%;animation:gradientMove 4s linear infinite;transition:width 1.6s cubic-bezier(.2,.9,.2,1);border-radius:999px}
+@keyframes gradientMove{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+/* portfolio */
+.filter-btns{text-align:center;margin-bottom:1.2rem}
+.filter-btn{margin:0 .4rem;padding:.45rem .9rem;border-radius:8px;border:1px solid var(--accent2);background:transparent;color:var(--accent2);cursor:pointer;transition:.25s}
+.filter-btn.active,.filter-btn:hover{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;border-color:transparent}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.portfolio-card{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.35)}
+.portfolio-card img{width:100%;display:block}
+.overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.6));display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:.35s;padding:1.2rem;text-align:center}
+.portfolio-card:hover .overlay{opacity:1}
+.btn-sm{padding:.45rem .8rem;border-radius:8px}
+
+/* timeline */
+.timeline{position:relative;margin:3rem 0}
+.timeline::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:3px;background:linear-gradient(180deg,var(--accent1),var(--accent2));background-size:200% 200%;animation:gradientFlow 6s linear infinite;transform:translateX(-50%)}
+@keyframes gradientFlow{0%{background-position:0% 0%}100%{background-position:0% 100%}}
+.timeline-item{position:relative;width:50%;padding:1.5rem 2rem}
+.timeline-item.left{left:0;text-align:right}
+.timeline-item.right{left:50%}
+.timeline-marker{position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);width:40px;height:40px;background:linear-gradient(135deg,var(--accent1),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;box-shadow:0 0 15px rgba(0,0,0,0.5)}
+.timeline-content{background:rgba(255,255,255,0.05);padding:1.2rem 1.5rem;border-radius:12px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 25px rgba(0,0,0,0.3);transition:.3s}
+
+/* contact */
+.contact-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.contact-card{background:rgba(255,255,255,0.04);border-radius:12px;padding:1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(8px)}
+.contact-icon{font-size:1.4rem;margin-bottom:.5rem;display:block}
+.social-links{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;justify-items:center;margin-top:.8rem}
+.social-links a:nth-child(3){grid-column:1 / -1;justify-self:center}
+.social-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:var(--text);transition:.25s;min-width:140px;justify-content:center}
+.social-btn i{font-size:1.1rem;margin-right:.3rem}
+
+/* contact cta */
+.contact-cta{display:flex;justify-content:center;gap:1.2rem;margin-top:1.5rem;flex-wrap:wrap}
+.contact-cta .btn{width:220px;text-align:center;padding:.9rem 1.2rem;border-radius:50px}
+
+/* footer */
+.footer{text-align:center;padding:1.2rem 0;color:var(--muted);margin-top:2rem}
+
+/* reveal */
+.reveal-up,.reveal-left,.reveal-right,.reveal-float{opacity:0;transform:translateY(20px);transition:all .8s}
+.reveal-up.active,.reveal-left.active,.reveal-right.active,.reveal-float.active{opacity:1;transform:none}
+.delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}
+
+/* swiper + lightbox helpers */
+.swiper{width:100%;max-width:1000px;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.5);margin:0 auto}
+.swiper-slide img{width:100%;display:block;border-radius:12px}
+.glightbox-clean .gslide-title{font-size:1.2rem;font-weight:600;margin-bottom:.5rem}
+.glightbox-clean .gslide-description{font-size:0.95rem;color:#bbb;line-height:1.5}
+
+/* responsive */
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.timeline::before{left:20px}.timeline-item,.timeline-item.left,.timeline-item.right{width:100%;left:0;text-align:left;padding-left:3.5rem}.timeline-marker{left:20px;transform:none}.about-grid{grid-template-columns:1fr}.social-links{grid-template-columns:1fr;grid-auto-rows:auto}.contact-cta .btn{width:100%} .nav-links{display:none}.nav-toggle{display:block} }
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-image: linear-gradient(var(--bg-dark), var(--bg-dark)), 
+                    linear-gradient(90deg, var(--accent1), var(--accent2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-image: linear-gradient(90deg, var(--accent1), var(--accent2)), 
+                    linear-gradient(90deg, var(--accent1), var(--accent2));
+}

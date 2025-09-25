@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project A — Project</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+</head>
+<body>
+  <main>
+    <section class="project-hero">
+      <style>
+        /* Menambah ruang di atas section hero */
+        .project-hero {
+          padding-top: 50px; /* Sesuaikan nilai ini (misalnya 50px) sesuai kebutuhan Anda */
+        }
+      </style>
+      <div class="container">
+        <h1>Project Web</h1>
+        <p class="muted">Web Design • 2023 - 2025</p>
+      </div>
+    </section>
+
+    <section class="project-gallery section">
+      <div class="container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="assets/1.png" class="glightbox">
+                <img src="assets/11.png" alt="Project A 1">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/2.png" class="glightbox">
+                <img src="assets/22.png" alt="Project A 2">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/3.png" class="glightbox">
+                <img src="assets/33.png" alt="Project A 3">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/4.png" class="glightbox">
+                <img src="assets/44.png" alt="Project A 3">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/5.png" class="glightbox">
+                <img src="assets/55.png" alt="Project A 3">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/6.png" class="glightbox">
+                <img src="assets/66.png" alt="Project A 3">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container">
+        <div class="contact-cta">
+          <a href="index.html#portfolio" class="btn btn-secondary">⬅ Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', { loop:true, pagination:{ el:'.swiper-pagination', clickable:true }, navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev' } });
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
+</body>
+</html>
