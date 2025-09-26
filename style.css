@@ -1,10 +1,10 @@
-
 :root{
   --bg:#0f172a; --bg-dark:#0f2233; --accent1:#7c3aed; --accent2:#06b6d4;
   --text:#f1f5f9; --muted:#94a3b8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Inter",sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg-dark));color:var(--text);-webkit-font-smoothing:antialiased}
+/* PERUBAHAN 1: Hapus background gradient dari sini */
+body{font-family:"Inter",sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
 /* ==================================== */
 /* ORNAMEN BACKGROUND BODY */
 /* ==================================== */
@@ -13,6 +13,36 @@ body {
     /* Pastikan body adalah container relatif */
     position: relative;
     overflow-x: hidden; /* Mencegah scroll horizontal dari ornamen */
+
+    /* DITAMBAHKAN: Warna dasar sebagai cadangan */
+    background-color: var(--bg); 
+    
+    /* MODIFIKASI: Menggabungkan kedua gradient menjadi satu properti background */
+    background-image: 
+        /* Lapisan 1: Garis Diagonal Halus (di atas) */
+        repeating-linear-gradient(
+            -45deg, 
+            rgba(255, 255, 255, 0.03), 
+            rgba(255, 255, 255, 0.03) 1px, 
+            transparent 1px, 
+            transparent 15px 
+        ),
+        /* Lapisan 2: Gradient Gelap Utama (di bawah) */
+        linear-gradient(135deg,var(--bg),var(--bg-dark));
+
+    background-size: 30px 30px, 100% 100%; /* Ukuran pola garis, lalu ukuran layar penuh */
+    background-attachment: fixed; /* Menjaga background tetap saat scroll */
+    animation: backgroundMove 60s linear infinite; /* Animasi pergerakan lambat */
+}
+
+/* Keyframes untuk pergerakan garis yang sangat lambat */
+@keyframes backgroundMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 30px 30px; /* Pindahkan pola sebesar ukuran aslinya */
+    }
 }
 
 /* Ornamen 1: Bulat Besar di Kiri Atas */
@@ -117,11 +147,38 @@ body::after {
 .hero-text h1{font-size:2.5rem}
 .typing{color:var(--muted);margin:1rem 0}
 .cta{margin-top:1rem;display:flex;gap:1rem}
-.btn{padding:.7rem 1.2rem;border-radius:999px;border:none;cursor:pointer;font-weight:600;position:relative;overflow:hidden;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn{
+  padding:.7rem 1.2rem;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  position:relative;
+  overflow:hidden;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  /* DITAMBAHKAN: outline: none; untuk dasar */
+  outline: none; 
+}
 .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
 .stats{display:flex;gap:2rem;margin-top:2rem}
 .stats span{font-size:1.4rem;color:var(--accent2);font-weight:700}
+/* Perbaikan sebelumnya untuk gambar hero */
+.hero-img img {
+  width: 100%;
+  border-radius: 20px; /* DITAMBAHKAN: Sudut membulat */
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  transition: transform .4s;
+}
+
+.hero-img img:hover {
+  transform: scale(1.02); /* Efek zoom sedikit saat hover */
+}
+/* Akhir perbaikan gambar hero */
+
 .section-title {
   /* Ini akan memberikan jarak yang lebih lega antara judul dan konten grid */
   margin-bottom: 2.5rem; 
@@ -359,4 +416,39 @@ body::after {
     }
     
     /* Perlu juga menyesuaikan bagaimana menu mobile Anda ditampilkan */
+}
+
+/* ==================================== */
+/* PERBAIKAN FOKUS TOMBOL & RIPPLE */
+/* ==================================== */
+
+/* Tambahkan Gaya untuk Elemen Ripple yang Dibuat oleh JavaScript */
+.ripple-circle {
+  position: absolute; 
+  background: rgba(255, 255, 255, 0.4); 
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none; 
+  z-index: 1; 
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4); 
+    opacity: 0;
+  }
+}
+
+/* Perbaikan Terakhir untuk Menghilangkan Outline/Shadow/Border Bawaan */
+.btn:focus,
+.btn:active,
+.btn-secondary:focus,
+.btn-secondary:active,
+a.btn:focus,
+a.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
