@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Reyhan Raditya — Portfolio</title>
   <link rel="icon" type="image/jpeg" href="assets/rey.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
@@ -14,7 +16,7 @@
     <div class="container nav-inner">
       <!-- <img src="assets/rey.png" alt="Logo Rey" style="height: 30px; vertical-align: middle;"> -->
       <a href="#home" class="logo">
-        <img src="assets/logo.png" alt="Logo Rey" style="height: 30px; vertical-align: middle;">
+        <img src="assets/rey.png" alt="Logo Rey" style="height: 30px; vertical-align: middle;">
         Rey<span class="accent">.</span>
       </a>
       <nav>
@@ -163,7 +165,8 @@
         <div class="filter-btns reveal-up">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="web">Web</button>
-          <button class="filter-btn" data-filter="design">Design & Video</button>
+          <button class="filter-btn" data-filter="app">Design</button>
+          <button class="filter-btn" data-filter="vid">Video</button>
         </div>
 
         <div class="portfolio-grid">
@@ -172,7 +175,7 @@
             <div class="overlay">
               <h3>Project A</h3>
               <p>Web Design</p>
-              <a href="project-a.html" class="btn btn-sm btn-primary ripple">Detail</a>
+              <a href="project-a.html" class="btn btn-sm btn-primary ripple" target="_blank">Detail</a>
             </div>
           </article>
 
@@ -181,7 +184,16 @@
             <div class="overlay">
               <h3>Project B</h3>
               <p>Design</p>
-              <a href="project-b.html" class="btn btn-sm btn-primary ripple">Detail</a>
+              <a href="project-b.html" class="btn btn-sm btn-primary ripple" target="_blank">Detail</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal-up delay-1" data-category="vid">
+            <img src="assets/VDO.png" alt="Project C">
+            <div class="overlay">
+              <h3>Project C</h3>
+              <p>Video</p>
+              <a href="project-c.html" class="btn btn-sm btn-primary ripple" target="_blank">Detail</a>
             </div>
           </article>
         </div>
@@ -196,17 +208,58 @@
           <div class="timeline-item left reveal-left">
             <div class="timeline-marker"><i class="icon">💻</i></div>
             <div class="timeline-content">
-              <span class="year">2023–Now</span>
-              <h3>Senior Frontend Developer</h3>
-              <p>Building scalable apps and leading a frontend team.</p>
+              <span class="year">2023 – 2024</span>
+              <h3>Social Media Specialist | PT Runata Investindo</h3>
+              <ul class="experience-list">
+                <li>Creating designs for social media feeds.</li>
+                <li>Planning and scheduling content to be published on social media.</li>
+                <li>Writing blog articles optimized for SEO.</li>
+                <li>Managing Google Ads and Meta Ads campaigns.</li>
+              </ul>
             </div>
           </div>
           <div class="timeline-item right reveal-right">
             <div class="timeline-marker"><i class="icon">🎨</i></div>
             <div class="timeline-content">
-              <span class="year">2020–2023</span>
-              <h3>UI/UX Designer</h3>
-              <p>Designed modern UI systems and improved user experience.</p>
+              <span class="year">2023 – 2024</span>
+              <h3>IT Support | PT Runata Investindo</h3>
+              <ul class="experience-list">
+                <li>Maintenance company software and hardware.</li>
+                <li>Maintenance the company’s network infrastructure.</li>
+                <li>Network installations.</li>
+                <li>Procuring software and hardware equipment.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item left reveal-left">
+            <div class="timeline-marker"><i class="icon">💻</i></div>
+            <div class="timeline-content">
+              <span class="year">2024</span>
+              <h3>Digital Marketing | MBK Pos</h3>
+              <ul class="experience-list">
+                <li>Managing the company website.</li>
+                <li>Developing the company website.</li>
+                <li>Creating designs for social media feeds.</li>
+                <li>Managing Google Ads and Meta Ads campaigns.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item right reveal-right">
+            <div class="timeline-marker"><i class="icon">🎨</i></div>
+            <div class="timeline-content">
+              <span class="year">2024 - 2026</span>
+              <h3>Social Media Specialist & Programmer | PT Tongxin Trading</h3>
+              <ul class="experience-list">
+                <li>Managing the company website.</li>
+                <li>Developing the company website.</li>
+                <li>Creating designs for social media feeds.</li>
+                <li>Editing video content for social media.</li>
+                <li>Managing Google Ads and Meta Ads campaigns.</li>
+                <li>Managing the company’s network infrastructure.</li>
+                <li>Writing SEO-optimized blog articles.</li>
+                <li>Planning and scheduling content for social media.</li>
+                <li>Preparing social media performance reports.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -244,7 +297,7 @@
         </div>
 
         <div class="contact-cta reveal-up" style="margin-top: 3rem;">
-          <a href="assets/Portofolio_Reyhan%20Raditya.pdf.pdf" class="btn btn-secondary ripple" download target="_blank">📂 Download Portfolio</a>
+          <!-- <a href="assets/Portofolio_Reyhan%20Raditya.pdf.pdf" class="btn btn-secondary ripple" download target="_blank">📂 Download Portfolio</a> -->
           <a href="assets/CV_ReyhanRaditya1.pdf" class="btn btn-secondary ripple" download target="_blank">📄 Download CV</a>
         </div>
       </div>

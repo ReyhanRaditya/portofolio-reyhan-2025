@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Video — Content Video</title>
+  <link rel="icon" type="image/jpeg" href="assets/rey.png" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+</head>
+<body>
+  <main>
+    <section class="project-hero">
+      <style>
+        /* Menambah ruang di atas section hero */
+        .project-hero {
+          padding-top: 50px; /* Sesuaikan nilai ini (misalnya 50px) sesuai kebutuhan Anda */
+        }
+      </style>
+      <div class="container">
+        <h1>Project Video</h1>
+        <p class="muted">Content Video • 2024 - 2025</p>
+      </div>
+    </section>
+
+    <section class="project-gallery section">
+      <div class="container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="assets/ester.mp4" class="glightbox">
+                <img src="assets/d7.png" alt="Project C 1">
+                <i class="fas fa-play-circle video-play-icon"></i>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/Content.mp4" class="glightbox">
+                <img src="assets/d8.png" alt="Project C 2">
+                <i class="fas fa-play-circle video-play-icon"></i>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/Chameleon Spring Green.mp4">
+                <img src="assets/d9.png" alt="Project C 3">
+                <i class="fas fa-play-circle video-play-icon"></i>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/FWS1.mp4" class="glightbox">
+                <img src="assets/d10.png" alt="Project C 3">
+                <i class="fas fa-play-circle video-play-icon"></i>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/silvestre12.mp4" class="glightbox">
+                <img src="assets/d11.png" alt="Project C 3">
+                <i class="fas fa-play-circle video-play-icon"></i>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="assets/23423.mp4" class="glightbox">
+                <img src="assets/d12.png" alt="Project C 3">
+                <i class="fas fa-play-circle video-play-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container">
+        <div class="contact-cta">
+          <a href="index.html#portfolio" class="btn btn-secondary">⬅ Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', { loop:true, pagination:{ el:'.swiper-pagination', clickable:true }, navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev' } });
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
+</body>
+</html>
